@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skate Music Studio (SMS) | Professional AI Composition</title>
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --dark: #0a0e14;
+            --text: #e0e6ed;
+            --gray: #2d3748;
+        }
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .section {
+            margin-bottom: 4rem;
+        }
+        h2 {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Audio Player Styling */
+        .audio-card {
+            background: var(--gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        audio {
+            filter: invert(100%);
+            opacity: 0.8;
+        }
+        /* Features Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            padding: 1.5rem;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: var(--primary);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        /* SMS Standard SP Format Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+        th {
+            color: var(--primary);
+        }
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--gray);
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,212,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Skate Music Studio</h1>
+    <p>Premium Audio Solution for Competitive Figure Skating</p>
+</header>
+
+<div class="container">
+    <section class="hero">
+        <h2>The New Standard of Performance</h2>
+        <p>We provide 100% original, copyright-safe musical scores tailored to your choreography.</p>
+    </section>
+
+    <section class="section">
+        <h2>Our Advantages</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>100% Original</h3>
+                <p>Never conflict with rivals. Your skater gets a unique musical identity.</p>
+            </div>
+            <div class="card">
+                <h3>Copyright Safe</h3>
+                <p>Fully cleared for international competitions and social media use.</p>
+            </div>
+            <div class="card">
+                <h3>24h Delivery</h3>
+                <p>Advanced AI composition technology enables world-record turnaround times.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>SMS Standard SP Format</h2>
+        <p>Our strategic structure designed for maximum execution points in Short Programs.</p>
+        <table>
+            <tr><th>Time</th><th>Structure</th></tr>
+            <tr><td>0:00 - 1:30</td><td>Power Plateau (3 Jumps Focus)</td></tr>
+            <tr><td>1:30 - 1:35</td><td>The Drop (Dynamic Contrast)</td></tr>
+            <tr><td>1:35 - 2:10</td><td>Step Sequence (Rhythmic Buildup)</td></tr>
+            <tr><td>2:10 - 2:40</td><td>Climax & Zero Landing</td></tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Audio Showcase</h2>
+        <div class="audio-card">
+            <div>
+                <strong>Sample SP 1: Dramatic / Modern</strong>
+            </div>
+            <audio controls>
+                <source src="audio/sample_sp1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <div class="footer">
+        <h2>Ready to Lead the New Season?</h2>
+        <p>Contact us for individual bespoke scores or Club Bulk Packages.</p>
+        <br>
+        <a href="mailto:info@skatemusicstudio.com" class="cta-button">Inquire Now</a>
+        <p style="margin-top: 2rem; opacity: 0.5;">&copy; 2026 Skate Music Studio. All Rights Reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>
