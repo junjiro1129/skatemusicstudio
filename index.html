@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Navbar Style */
         nav {
             padding: 20px 50px;
             background: rgba(12, 20, 37, 0.9);
@@ -44,15 +43,15 @@
         }
 
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(12, 20, 37, 0.75), rgba(12, 20, 37, 0.75)),
-                        url('https://plus.unsplash.com/premium_photo-1672081351698-b69fe0bb580e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fCVFMyU4MyU5NSVFMyU4MiVBMyVFMyU4MiVBRSVFMyU4MyVBNSVFMyU4MiVBMiVFMyU4MiVCOSVFMyU4MiVCMSVFMyU4MyVCQyVFMyU4MyU4OHxlbnwwfHwwfHx8MA%3D%3D') center/cover;
-            padding: 0 20px;
+            background: linear-gradient(rgba(12, 20, 37, 0.78), rgba(12, 20, 37, 0.78)),
+                        url('https://plus.unsplash.com/premium_photo-1672081351698-b69fe0bb580e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fCVFMyU4MyU5NSVFMyU4MiVBMyVFMyU4MiVBRSVFMyU4MyVBNSVFMyU4MiVBMiVFMyU4MiVCOSVFMyU4MiVCMiVFMyU4MyVCQyVFMyU4MyU4OHxlbnwwfHwwfHx8MA%3D%3D') center/cover;
+            padding: 120px 20px 60px;
         }
 
         .service-name {
@@ -64,6 +63,18 @@
             text-transform: uppercase;
         }
 
+        .ai-badge {
+            display: inline-block;
+            border: 1px solid rgba(212,175,55,0.5);
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            padding: 5px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
@@ -72,11 +83,12 @@
         }
 
         .hero-sub {
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             font-weight: 300;
-            max-width: 850px;
+            max-width: 820px;
             margin-bottom: 2.5rem;
             color: var(--text-dark);
+            line-height: 1.9;
         }
 
         .cta-button {
@@ -151,32 +163,290 @@
             margin-top: 25px;
         }
 
-        .certificate-box {
-            border-left: 5px solid var(--accent-color);
-            padding: 30px 45px;
-            background: rgba(212, 175, 55, 0.05);
-            margin-top: 60px;
-            border-radius: 0 15px 15px 0;
+        /* --- 価格表 --- */
+        .pricing-section {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(212,175,55,0.1);
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 16px;
+            padding: 36px 30px;
+            background: rgba(255,255,255,0.04);
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--accent-color);
+            background: rgba(255,255,255,0.07);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-color);
+            background: rgba(212,175,55,0.07);
+        }
+
+        .pricing-card .plan-label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .plan-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin: 0 0 6px;
+        }
+
+        .pricing-card .plan-price {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 16px 0 4px;
+        }
+
+        .pricing-card .plan-price span {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-dark);
+        }
+
+        .pricing-card .plan-desc {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .pricing-card ul li:before {
+            content: "✓ ";
+            color: var(--accent-color);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 4px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        /* 競合比較表 */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 20px;
+        }
+
+        .compare-table th {
+            padding: 14px 16px;
+            text-align: center;
+            border-bottom: 2px solid rgba(212,175,55,0.3);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .compare-table th.sms-col {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .compare-table td {
+            padding: 13px 16px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-dark);
+        }
+
+        .compare-table td:first-child {
+            text-align: left;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .compare-table td.sms-col {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .compare-table .check { color: #6fcf97; }
+        .compare-table .cross { color: #eb5757; opacity: 0.7; }
+
+        /* About */
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.1);
+            border: 2px solid rgba(212,175,55,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            max-width: 260px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin: 0 0 4px;
+        }
+
+        .about-text .about-title {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .about-tag {
+            border: 1px solid rgba(212,175,55,0.4);
+            color: var(--accent-color);
+            font-size: 0.78rem;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 24px 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* How it works */
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .flow-num {
+            background: #d4af37;
+            color: #0c1425;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .policy-note {
+            background: rgba(212,175,55,0.06);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 12px;
+            padding: 24px 30px;
+            margin-top: 30px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .policy-note strong {
+            color: var(--text-light);
         }
 
         .footer {
-            text-align: center;
             padding: 60px;
             font-size: 0.9rem;
             opacity: 0.7;
             border-top: 1px solid rgba(255,255,255,0.1);
             background: #060a13;
+            text-align: center;
         }
 
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
+        .highlight { color: var(--accent-color); font-weight: 600; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .hero-sub { font-size: 1.1rem; }
+            .hero-sub { font-size: 1rem; }
             nav { padding: 15px 20px; }
+            .about-wrap { grid-template-columns: 1fr; }
+            .about-photo { max-width: 160px; }
+            .compare-table { font-size: 0.78rem; }
+            .compare-table th, .compare-table td { padding: 10px 8px; }
         }
     </style>
 </head>
@@ -187,7 +457,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8WSL353E0E');
 </script>
 
@@ -197,26 +466,27 @@
         <div class="nav-logo">Skate Music Studio</div>
     </nav>
 
+    <!-- ========== HERO ========== -->
     <header>
         <div class="service-name">Skate Music Studio</div>
-        <h1>Get 10 unique programs<br>within 48 hours, on the ice.</h1>
-        <p class="hero-sub">I am not an editor. I am not a composer. <br>
-	<span class="highlight">I am your dedicated infrastructure for elite competitive music.</span><br>
-            While other coaches waste hours browsing Amazon Music or wrestling with editing software, you should be on the ice.<br><br>
-            <span class="highlight">My Promise to You:</span><br>
-	<span class="highlight">Within 48 hours,</span> I can provide a curated selection of 5 Short Programs and 5 Free Skates—fully mastered, arena-optimized, and ready for you to begin choreography immediately.<br><br>
-
-	Your time is too valuable to spend behind a computer screen.<br>
-	 Use it for your athletes. Let me handle the sound.<p>
-
+        <div class="ai-badge">✦ Powered by AI Music Technology</div>
+        <h1>Your dedicated music partner<br>for elite competitive skating.</h1>
+        <p class="hero-sub">
+            While other coaches spend hours searching for music or fighting copyright issues,<br>
+            you should be on the ice — coaching.<br><br>
+            <span class="highlight">Within 48 hours,</span> receive a curated selection of 5 Short Programs and 5 Free Skates —
+            100% original, royalty-free, and ready for choreography.<br><br>
+            Every score is unique. Every score is yours alone.
+        </p>
         <a href="https://forms.gle/iLdc9JUnEmGE51K47" class="cta-button" target="_blank">Start Your Inquiry</a>
     </header>
 
 
+    <!-- ========== SAMPLES ========== -->
     <section id="samples">
-        <h2>At First, Check Our Professional Scores</h2>
+        <h2>Listen to Our Scores</h2>
         <p style="text-align: center; max-width: 800px; margin: -40px auto 60px; opacity: 0.9;">
-            High-quality, competition-ready orchestral scores. Delivered within 48 hours, tailored to your exact duration and BPM.
+            Competition-ready orchestral scores, composed by AI and curated by our team. Delivered within 48 hours, tailored to your exact duration and BPM.
         </p>
 
         <div class="grid">
@@ -224,7 +494,7 @@
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Pure Elegant</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Ethereal Ascent</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Ladies/Men's FS (Fluid & Graceful)<br>
+                    <strong>Best for:</strong> Ladies/Men's FS (Fluid &amp; Graceful)<br>
                     A cinematic orchestral score with a steady 120BPM. Features a gentle build-up and a shimmering climax.
                 </p>
                 <audio controls style="width: 100%;">
@@ -236,7 +506,7 @@
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Majestic Spirit</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Royal Fortress</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Ladies/Men's FS (Powerful & Dynamic)<br>
+                    <strong>Best for:</strong> Ladies/Men's FS (Powerful &amp; Dynamic)<br>
                     Driving staccato strings and triumphant brass. Provides a strong rhythmic backbone for high-difficulty jumps.
                 </p>
                 <audio controls style="width: 100%;">
@@ -248,7 +518,7 @@
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Grand Epic</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Immortal Hero</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Men's FS (Powerful & Dynamic)<br>
+                    <strong>Best for:</strong> Men's FS (Powerful &amp; Dynamic)<br>
                     Heavy percussion and heroic choir. Designed for maximum impact in the final 30 seconds of the performance.
                 </p>
                 <audio controls style="width: 100%;">
@@ -260,18 +530,19 @@
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Modern Cinematic</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Golden Triumph</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Ladies/Men's FS (Technical & Emotional)<br>
+                    <strong>Best for:</strong> Ladies/Men's FS (Technical &amp; Emotional)<br>
                     A balanced, 3-part orchestral structure that supports both intricate footwork and powerful closing segments.
                 </p>
                 <audio controls style="width: 100%;">
                     <source src="sample_FS4.mp3" type="audio/mpeg">
                 </audio>
             </div>
+
             <div class="sample-box" style="margin: 0; text-align: left; padding: 30px;">
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">High Impact SP</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Summit Plateau</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Ladies/Men's SP (Technical & High-Impact)<br>
+                    <strong>Best for:</strong> Ladies/Men's SP (Technical &amp; High-Impact)<br>
                     Designed with zero intro and a constant high-energy plateau until 1:30. Features a sharp, "cliff-edge" finish for maximum impact.
                 </p>
                 <audio controls style="width: 100%;">
@@ -283,36 +554,136 @@
                 <span style="background: var(--accent-color); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Pure Elegance SP</span>
                 <h3 style="color: var(--accent-color); margin: 15px 0 10px;">Azure Grace</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">
-                    <strong>Best for:</strong> Ladies SP (Fluid & Artistic)<br>
+                    <strong>Best for:</strong> Ladies SP (Fluid &amp; Artistic)<br>
                     A royal orchestral score that maintains a sophisticated atmosphere. Perfect for skaters emphasizing artistic interpretation and flow.
                 </p>
                 <audio controls style="width: 100%;">
                     <source src="sample_SP2.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
-        </div>
-
-        <div class="certificate-box" style="margin-top: 50px; border: 1px solid var(--accent-color); background: rgba(212, 175, 55, 0.05);">
-            <h3 style="color: var(--accent-color);">Why Partner with SMS?</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; margin-top: 20px;">
-                <div>
-                    <h4 style="margin-bottom: 10px;">✓ Unbeatable Pricing</h4>
-                    <p style="font-size: 0.9rem;">The most affordable professional scoring service for competitive skating. Bulk discounts available for clubs.</p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 10px;">✓ Pay-After-Satisfaction</h4>
-                    <p style="font-size: 0.9rem;">Risk-free ordering. You only pay after you are 100% satisfied with the final track.</p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 10px;">✓ 48h Rapid Delivery</h4>
-                    <p style="font-size: 0.9rem;">From inquiry to final master in just 2 days. Perfect for mid-season program adjustments.</p>
-                </div>
-            </div>
         </div>
     </section>
-	
 
+
+    <!-- ========== PRICING ========== -->
+    <div class="pricing-section">
+    <section id="pricing">
+        <h2>Pricing</h2>
+
+        <div class="pricing-grid">
+
+            <!-- Standard -->
+            <div class="pricing-card">
+                <div class="plan-label">Standard</div>
+                <div class="plan-name">Original Score</div>
+                <div class="plan-price">$199 <span>/ track</span></div>
+                <p class="plan-desc">A fully original, competition-ready orchestral score composed to your genre, BPM, and duration. Multiple candidates delivered within 48 hours.</p>
+                <ul>
+                    <li>6+ tracks: $170 / track</li>
+                    <li>12+ tracks: $120 / track</li>
+                    <li>100% original &amp; royalty-free</li>
+                    <li>Certificate of Rights included</li>
+                    <li>Pay after satisfaction</li>
+                </ul>
+            </div>
+
+            <!-- Custom -->
+            <div class="pricing-card featured">
+                <div class="featured-badge">Recommended for custom projects</div>
+                <div class="plan-label">Custom</div>
+                <div class="plan-name">Synchronized Score</div>
+                <div class="plan-price">$450 <span>/ track</span></div>
+                <p class="plan-desc">Composed and refined to match your existing choreography — timing, energy arc, and key moments precisely aligned. Unlimited revisions until you are fully satisfied.</p>
+                <ul>
+                    <li>Tailored to your choreography</li>
+                    <li>Unlimited revisions included</li>
+                    <li>100% original &amp; royalty-free</li>
+                    <li>Certificate of Rights included</li>
+                    <li>Pay after satisfaction</li>
+                </ul>
+            </div>
+
+            <!-- Club -->
+            <div class="pricing-card">
+                <div class="plan-label">Club / Bulk</div>
+                <div class="plan-name">Club Pack</div>
+                <div class="plan-price">$120 <span>/ track</span></div>
+                <p class="plan-desc">For club leaders managing multiple skaters. Ideal for full-roster programs at the start of each season.</p>
+                <ul>
+                    <li>12+ tracks (mix of SP &amp; FS)</li>
+                    <li>Custom bulk quotes available</li>
+                    <li>100% original &amp; royalty-free</li>
+                    <li>Certificate of Rights included</li>
+                    <li>Pay after satisfaction</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 競合比較表 -->
+        <h3 style="text-align:center; color: var(--text-dark); font-size: 1rem; font-weight: 400; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase;">How SMS compares</h3>
+        <div style="overflow-x: auto;">
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th style="text-align:left;"></th>
+                    <th>Traditional<br>Music Editor</th>
+                    <th>Custom<br>Composer</th>
+                    <th class="sms-col">⭐ SMS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Delivery time</td>
+                    <td>3 – 14 days</td>
+                    <td>4 – 12 weeks</td>
+                    <td class="sms-col">Within 48h</td>
+                </tr>
+                <tr>
+                    <td>Candidates provided</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td class="sms-col">5 SP + 5 FS</td>
+                </tr>
+                <tr>
+                    <td>100% original score</td>
+                    <td class="cross">✗</td>
+                    <td class="check">✓</td>
+                    <td class="sms-col check">✓</td>
+                </tr>
+                <tr>
+                    <td>Royalty-free certificate</td>
+                    <td class="cross">✗</td>
+                    <td>Varies</td>
+                    <td class="sms-col check">✓ Included</td>
+                </tr>
+                <tr>
+                    <td>ISU / YouTube / TV safe</td>
+                    <td class="cross">✗ Rights risk</td>
+                    <td>Varies</td>
+                    <td class="sms-col check">✓ Guaranteed</td>
+                </tr>
+                <tr>
+                    <td>Pay after satisfaction</td>
+                    <td class="cross">✗</td>
+                    <td class="cross">✗</td>
+                    <td class="sms-col check">✓</td>
+                </tr>
+                <tr>
+                    <td>Price (SP + FS set)</td>
+                    <td>$45 – $150<br><small>editing only</small></td>
+                    <td>$500 – $3,000+</td>
+                    <td class="sms-col">From $199</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+    </section>
+    </div>
+
+
+    <!-- ========== WHY SMS ========== -->
     <section id="advantages">
         <h2>Why Professional Coaches Choose SMS?</h2>
         <div class="grid">
@@ -321,8 +692,12 @@
                 <p>Multiple candidates delivered within 48 hours. We ensure your choreography sessions stay on schedule.</p>
             </div>
             <div class="advantage-card">
+                <h3>🤖 Powered by AI Technology</h3>
+                <p>AI composition enables unlimited originality at a fraction of traditional costs — delivering unique scores that no other skater will ever use.</p>
+            </div>
+            <div class="advantage-card">
                 <h3>🏆 Elite Figure Skating Design</h3>
-                <p>Engineered for technical elements: Acceleration for 1.1x bonus segments and precise timing for jumps and spins.</p>
+                <p>Engineered for technical elements: acceleration for 1.1x bonus segments and precise timing for jumps and spins.</p>
             </div>
             <div class="advantage-card">
                 <h3>✨ 100% Original Scores</h3>
@@ -333,75 +708,146 @@
                 <p>Every score includes a "Certificate of Rights." Secure for YouTube, TV broadcasting, and ISU international events.</p>
             </div>
             <div class="advantage-card">
-                <h3>🤝 Partner with Coaches</h3>
-                <p>Designed for club leaders and independent coaches. We offer bulk licensing and custom scoring solutions for your entire team's roster.</p>
-            </div>
-            <div class="advantage-card">
                 <h3>✅ Pay After Satisfaction</h3>
                 <p>Experience the music first. Test it on the ice and pay only when you are 100% satisfied. No risk, no stress.</p>
             </div>
         </div>
     </section>
 
+
+    <!-- ========== ABOUT ========== -->
+    <div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-wrap">
+            <div>
+                <div class="about-photo"><img src="IMG_5936.jpg" style="width:100%;border-radius:50%;border:2px solid rgba(212,175,55,0.4);"></div>
+                <!-- 写真の準備ができたら上記を <img src="IMG_5936.jpg" style="width:100%;border-radius:50%;border:2px solid rgba(212,175,55,0.4);"> に差し替えてください -->
+            </div>
+            <div class="about-text">
+                <h3>Junjiro Naka</h3>
+                <div class="about-title">Founder, Skate Music Studio &nbsp;·&nbsp; Hiroshima, Japan</div>
+                <p>
+                    I built Skate Music Studio because I believe every skater deserves music that is truly their own — 100% original, competition-safe, and ready before your next practice session.
+                </p>
+                <p>
+                    The idea came from watching coaches and skaters spend enormous time and energy on music licensing — only to face last-minute copyright issues or end up with the same track as a rival. I combined my passion for figure skating with AI music technology to eliminate that problem entirely.
+                </p>
+                <p>
+                    Every inquiry I receive, I handle personally. When you reach out, you are talking directly to me. I am committed to finding the right sound for each skater — and I won't send an invoice until you are fully satisfied.
+                </p>
+                <div class="about-tags">
+                    <span class="about-tag">Hiroshima, Japan</span>
+                    <span class="about-tag">Available worldwide</span>
+                    <span class="about-tag">English &amp; Japanese</span>
+                    <span class="about-tag">Responds within 24h</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+
+    <!-- ========== HOW IT WORKS ========== -->
     <section id="flow">
         <h2>How It Works</h2>
         <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto;">
-        
-        <div style="display: flex; align-items: flex-start; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
-            <div style="background: #d4af37; color: #0c1425; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0;">1</div>
-            <div>
-                <strong style="color: #d4af37; font-size: 1.1rem;">Submit Inquiry</strong>
-                <p style="margin: 5px 0 0 0;">Fill out the <a href="https://forms.gle/iLdc9JUnEmGE51K47">Google Form</a> with your program requirements (Genre, Duration, BPM, etc.).Or Please mail direct <a href="mailto:info@skatemusicstudio.com?subject=Inquiry">info@skatemusicstudio.com</a></p>
+
+            <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                    <strong style="color: #d4af37; font-size: 1.1rem;">Submit Inquiry</strong>
+                    <p style="margin: 5px 0 0 0;">Fill out the <a href="https://forms.gle/iLdc9JUnEmGE51K47" style="color: var(--accent-color);">inquiry form</a> with your program requirements (genre, duration, BPM, skater profile, etc.) or email us directly at <a href="mailto:info@skatemusicstudio.com" style="color: var(--accent-color);">info@skatemusicstudio.com</a></p>
+                </div>
             </div>
+
+            <div class="flow-step">
+                <div class="flow-num">2</div>
+                <div>
+                    <strong style="color: #d4af37; font-size: 1.1rem;">Receive Candidates (within 48h)</strong>
+                    <p style="margin: 5px 0 0 0;">We email you multiple original score candidates. Take your time — try them on the ice and choose your favourite. All tracks at this stage are unmastered previews.</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                    <strong style="color: #d4af37; font-size: 1.1rem;">Refine Until Satisfied</strong>
+                    <p style="margin: 5px 0 0 0;">Not quite right? Let us know and we will keep refining. For Custom Synchronized Scores, revisions are unlimited. You are in control throughout.</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-num">4</div>
+                <div>
+                    <strong style="color: #d4af37; font-size: 1.1rem;">Pay &amp; Receive Final Files</strong>
+                    <p style="margin: 5px 0 0 0;">Once you are 100% satisfied, we send a secure payment link. Upon confirmation, we deliver fully mastered <strong>.wav</strong> and <strong>.mp3 (320kbps)</strong> files together with your <strong>Certificate of Rights</strong>.</p>
+                </div>
+            </div>
+
         </div>
 
-        <div style="display: flex; align-items: flex-start; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
-            <div style="background: #d4af37; color: #0c1425; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0;">2</div>
-            <div>
-                <strong style="color: #d4af37; font-size: 1.1rem;">Receive Demos (within 48h)</strong>
-                <p style="margin: 5px 0 0 0;">We will email you multiple original candidates. Take your time to listen and choose your favorite.</p>
-            </div>
+        <div class="policy-note">
+            <strong>Cancellation &amp; Payment Policy</strong><br>
+            You may cancel at any time before payment — no questions asked. Simply let us know and the project stops immediately. Any tracks delivered during the process remain available for individual purchase.<br><br>
+            <strong>Please note:</strong> Tracks shared during the creative process are unmastered previews. Final mastered quality is delivered upon payment. All sales are final after payment is confirmed.
         </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
-            <div style="background: #d4af37; color: #0c1425; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0;">3</div>
-            <div>
-                <strong style="color: #d4af37; font-size: 1.1rem;">Selection & Payment</strong>
-                <p style="margin: 5px 0 0 0;">Notify us of your choice. We will send a link for secure payment.</p>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37;">
-            <div style="background: #d4af37; color: #0c1425; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0;">4</div>
-            <div>
-                <strong style="color: #d4af37; font-size: 1.1rem;">Final Delivery</strong>
-                <p style="margin: 5px 0 0 0;">Upon confirmation of payment, we deliver the high-quality .wav files along with your "Certificate of Rights."</p>
-            </div>
-        </div>
-
-    </div>
-  </section>
-
-
-
-
-    <section style="text-align: center;">
-        <h2>Professional Scoring for Professional Coaches.</h2>
-        <p>Contact us to discuss custom projects for individual skaters or entire skating clubs.</p>
-        <br>
-        <a href="https://forms.gle/iLdc9JUnEmGE51K47" class="cta-button" target="_blank">Start Your Inquiry</a>
     </section>
 
-    <div class="footer">
-	<div style="text-align: center; padding: 20px 0; font-size: 14px; border-top: 1px solid #eee;">
-    <p style="margin-bottom: 10px;">
-        &copy; 2026 Skate Music Studio by Naka Homes Co., Ltd. All rights reserved.
-    </p>
-    <a href="legal.html" style="color: #666; text-decoration: none; margin: 0 10px;">Legal Notice (Act on Specified Commercial Transactions)</a>
-    <span style="color: #ccc;">|</span>
-    <a href="privacy.html" style="color: #666; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
-</div>
 
+    <!-- ========== FAQ ========== -->
+    <div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(212,175,55,0.1);">
+    <section id="faq">
+        <h2>FAQ</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+
+            <div class="faq-item">
+                <div class="faq-q">Is the music AI-generated?</div>
+                <div class="faq-a">Yes — and that is a feature, not a limitation. AI composition means your skater receives a score that has never existed before, with no copyright strings attached. At the 2026 Milan Olympics, AI-generated music was used in official ISU competition for the first time. The landscape is evolving rapidly, and SMS is built for it.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Is it safe to use at ISU competitions?</div>
+                <div class="faq-a">Yes. Every SMS score is 100% original — not based on any existing copyrighted work. There is currently no ISU rule prohibiting AI-generated music. Each delivery includes a Certificate of Rights confirming the track is royalty-free and cleared for ISU events, YouTube, and TV broadcasting worldwide.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What is the difference between Standard and Custom Synchronized Score?</div>
+                <div class="faq-a">The Standard Original Score ($199/track) is composed to your genre, BPM, and duration — ideal when choreography has not yet been set. The Custom Synchronized Score ($450/track) is composed and refined to match an existing choreography precisely, aligning key musical moments with specific moves. Unlimited revisions are included until you are fully satisfied.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What file formats are delivered?</div>
+                <div class="faq-a">Upon payment, you receive fully mastered <strong>.wav</strong> (CD quality) and <strong>.mp3</strong> (320kbps) files — both suitable for competition submission and practice. Tracks shared during the selection process are unmastered previews.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What languages can I communicate in?</div>
+                <div class="faq-a">English and Japanese. All inquiries are handled personally by the founder. We respond within 24 hours.</div>
+            </div>
+
+        </div>
+    </section>
+    </div>
+
+
+    <!-- ========== CTA ========== -->
+    <section style="text-align: center;">
+        <h2>Professional Scoring for Professional Coaches.</h2>
+        <p style="color: var(--text-dark); max-width: 600px; margin: -30px auto 40px;">Contact us to discuss a custom project for an individual skater or your entire club roster.</p>
+        <a href="https://forms.gle/iLdc9JUnEmGE51K47" class="cta-button" target="_blank">Start Your Inquiry</a>
+        <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-dark);">Or email directly: <a href="mailto:info@skatemusicstudio.com" style="color: var(--accent-color);">info@skatemusicstudio.com</a></p>
+    </section>
+
+
+    <!-- ========== FOOTER ========== -->
+    <div class="footer">
+        <p style="margin-bottom: 10px;">
+            &copy; 2026 Skate Music Studio by Naka Homes Co., Ltd. All rights reserved.
+        </p>
+        <a href="legal.html" style="color: #999; text-decoration: none; margin: 0 10px;">Legal Notice (Act on Specified Commercial Transactions)</a>
+        <span style="color: #555;">|</span>
+        <a href="privacy.html" style="color: #999; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
     </div>
 
 </body>
