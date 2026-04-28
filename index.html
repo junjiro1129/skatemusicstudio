@@ -366,6 +366,79 @@
             border-radius: 20px;
         }
 
+        /* Certificate Preview */
+        .cert-preview-wrap {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cert-preview-label {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .cert-preview-img {
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 8px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            cursor: zoom-in;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .cert-preview-img:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 16px 60px rgba(212,175,55,0.2);
+        }
+
+        .cert-preview-caption {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 12px;
+        }
+
+        /* Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cert-modal.open {
+            display: flex;
+        }
+
+        .cert-modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.8);
+        }
+
+        .cert-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 2.2rem;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .cert-modal-close:hover { color: var(--accent-color); }
+
         /* FAQ */
         .faq-item {
             border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -469,7 +542,7 @@
     <!-- ========== HERO ========== -->
     <header>
         <div class="service-name">Skate Music Studio</div>
-        <div class="ai-badge">✦ Powered by Human craft work + AI Music Technology</div>
+        <div class="ai-badge">✦ Powered by Human craft work + Music Technology</div>
         <h1>Your dedicated music partner<br>for elite competitive skating.</h1>
         <p class="hero-sub">
             While other coaches spend hours searching for music or fighting copyright issues,<br>
@@ -697,8 +770,8 @@
                 <p>Multiple candidates delivered within 48 - 96 hours. We ensure your choreography sessions stay on schedule. With optional services, delivery within 24 hours is also possible.</p>
             </div>
             <div class="advantage-card">
-                <h3>🤖 Powered by Human Craft &amp; AI</h3>
-                <p>AI composes, I refine. I transform AI-generated foundations into competition-ready scores, perfectly tailored to your skating and rhythm.</p>
+                <h3>🤖 Powered by Human Craft &amp; Technology</h3>
+                <p>The fusion of craftsmanship and technology has enabled us to deliver a large number of original works in a short amount of time.</p>
             </div>
             <div class="advantage-card">
                 <h3>🏆 Elite Figure Skating Design</h3>
@@ -719,6 +792,32 @@
         </div>
     </section>
 
+
+    <!-- ========== CERTIFICATE PREVIEW ========== -->
+    <div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
+    <section id="certificate" style="text-align:center;">
+        <h2>Certificate of Rights</h2>
+        <p style="color: var(--text-dark); max-width: 680px; margin: -40px auto 50px; font-size: 0.95rem; line-height: 1.8;">
+            Every score delivered by SMS includes a Certificate of Rights — confirming 100% original composition, royalty-free status, and clearance for ISU events, YouTube, and TV broadcasting worldwide.
+        </p>
+        <div class="cert-preview-wrap">
+            <div class="cert-preview-label">✦ Sample Certificate</div>
+            <img
+                src="SMS_Certificate_of_Rights_page-0001.jpg"
+                alt="SMS Certificate of Rights Sample"
+                class="cert-preview-img"
+                onclick="document.getElementById('certModal').classList.add('open')"
+            >
+            <p class="cert-preview-caption">Click to enlarge · Issued with every final delivery</p>
+        </div>
+    </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="certModal" class="cert-modal" onclick="this.classList.remove('open')">
+        <span class="cert-modal-close" onclick="document.getElementById('certModal').classList.remove('open')">&times;</span>
+        <img src="SMS_Certificate_of_Rights_page-0001.jpg" alt="SMS Certificate of Rights">
+    </div>
 
     <!-- ========== ABOUT ========== -->
     <div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
